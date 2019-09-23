@@ -8,15 +8,10 @@ Cat.prototype.eat = function(mouse){
 	mouse.die();
 }
 
-function Mouse(name) {
-	this.name = name;
-	this.dead = false;
-}
 
-Mouse.prototype.die = function(){
-	this.dead = true
-}
 var mouse = new Mouse('mickey');
 var cat = new Cat('Tom')
 cat.eat(mouse);
 console.log(cat)
+
+module.exports = Cat;

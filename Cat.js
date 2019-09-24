@@ -1,17 +1,17 @@
-function Cat(name) {
-	this.name = name
+var Mouse = require('./Mouse');
+
+function Cat() {
 	this.stomach = [];
 }
 
-Cat.prototype.eat = function(mouse){
-	this.stomach.push(mouse);
-	mouse.die();
-}
+Cat.prototype.eat = function(animal){
+	if(animal instanceof Mouse ) {
+		this.stomach.push(animal)
+		animal.die()
+	}else {
+		throw new Error('Cat can only eat Mouse'); 
+	}
+} 
 
-
-var mouse = new Mouse('mickey');
-var cat = new Cat('Tom')
-cat.eat(mouse);
-console.log(cat)
 
 module.exports = Cat;
